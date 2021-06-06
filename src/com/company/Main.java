@@ -4,15 +4,28 @@ public class Main {
 
     public static void main(String[] args)
     {
-       // String s="рыжий";
-        Cockroach first = new Cockroach("рыжий",5,2);
-        Butterflies third = new Butterflies(3,6,2);
+        Cockroach first= new Cockroach("жив","рыжий",5,2);
+        Cockroach second = new Cockroach("не жив","черный",1,1);
+        Butterflies third = new Butterflies("жив",3,6,2);
         first.getInfo();
+        second.getInfo();
         third.getInfo();
-       // System.out.println("Надеюсь сработает и покажет кол-во лапок и усов, а также ебучий цвет - " + first.getPaws() +" "+ first.getUsi()+ " "+ first.getColors());
     }
 }
-class Animal {
+class Animal
+{
+    private String Live;//состояние, живой или нет
+    public String getLive()
+    {
+        return Live;
+    }
+    public void setLive(String live)
+    {
+        if (live=="жив"|live=="не жив")
+        {
+            this.Live=live;
+        }
+    }
 }
 class Bug extends Animal
 {
@@ -44,8 +57,9 @@ class Bug extends Animal
 class Cockroach extends Bug//таракан
 {
     public Cockroach () {}
-    public Cockroach (String Colors,int x,int y)//конструктор с параметрами
+    public Cockroach (String live,String Colors,int x,int y)//конструктор с параметрами
     {
+        setLive(live);
         setColors(Colors);
         setPaws(x);
         setUsi(y);
@@ -65,14 +79,15 @@ class Cockroach extends Bug//таракан
     }
     public void getInfo()
     {
-        System.out.println("Это таракан, который имеет "+ getColors() +" цвет, "+getPaws()+ " лапок и "+getUsi()+" уса");
+        System.out.println("Это "+ getLive() +" таракан, который имеет "+ getColors() +" цвет, "+getPaws()+ " лапок и "+getUsi()+" уса");
     }
 }
 class Butterflies extends Bug//бабочки
 {
     public Butterflies (){}
-    public Butterflies (int x, int y,int z)//конструктор с параметрами
+    public Butterflies (String live,int x, int y,int z)//конструктор с параметрами
     {
+        setLive(live);
         setTimeLife(x);
         setPaws(y);
         setUsi(z);
@@ -91,6 +106,6 @@ class Butterflies extends Bug//бабочки
     }
     public void getInfo()
     {
-        System.out.println("Это бабочка, у которой "+ getPaws() +" лапок, "+getUsi()+" уса и она проживет "+ getTL()+ " месяц(а/ев)");
+        System.out.println("Это "+getLive()+" бабочка, у которой "+ getPaws() +" лапок, "+getUsi()+" уса и она проживет "+ getTL()+ " месяц(а/ев)");
     }
 }
