@@ -1,17 +1,15 @@
 package com.company;
-import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args)
     {
-        Scanner in = new Scanner(System.in);
-        Cockroach green = new Cockroach();
-        green.setPaws(6);
-        green.setUsi(1);
-        String s="рыжий";
-        green.setColors(s);
-        System.out.println("Надеюсь сработает и покажет кол-во лапок и усов, а также ебучий цвет - " + green.getPaws() +" "+ green.getUsi()+ " "+ green.getColors());
+       // String s="рыжий";
+        Cockroach first = new Cockroach("рыжий",5,2);
+        Butterflies third = new Butterflies(3,6,2);
+        first.getInfo();
+        third.getInfo();
+       // System.out.println("Надеюсь сработает и покажет кол-во лапок и усов, а также ебучий цвет - " + first.getPaws() +" "+ first.getUsi()+ " "+ first.getColors());
     }
 }
 class Animal {
@@ -45,6 +43,13 @@ class Bug extends Animal
 }
 class Cockroach extends Bug//таракан
 {
+    public Cockroach () {}
+    public Cockroach (String Colors,int x,int y)//конструктор с параметрами
+    {
+        setColors(Colors);
+        setPaws(x);
+        setUsi(y);
+    }
     private String Colors; //цвет таракана
     public String getColors()
     {
@@ -58,8 +63,34 @@ class Cockroach extends Bug//таракан
         }
         else System.out.println("Зачем ты красишь тараканов?");
     }
+    public void getInfo()
+    {
+        System.out.println("Это таракан, который имеет "+ getColors() +" цвет, "+getPaws()+ " лапок и "+getUsi()+" уса");
+    }
 }
 class Butterflies extends Bug//бабочки
 {
-
+    public Butterflies (){}
+    public Butterflies (int x, int y,int z)//конструктор с параметрами
+    {
+        setTimeLife(x);
+        setPaws(y);
+        setUsi(z);
+    }
+    private int TL;//время жизни в месяцах
+    public int getTL()
+    {
+        return TL;
+    }
+    public void setTimeLife(int time)
+    {
+        if (time>=1 & time<=8)
+        {
+            this.TL=time;
+        }
+    }
+    public void getInfo()
+    {
+        System.out.println("Это бабочка, у которой "+ getPaws() +" лапок, "+getUsi()+" уса и она проживет "+ getTL()+ " месяц(а/ев)");
+    }
 }
