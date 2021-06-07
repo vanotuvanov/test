@@ -1,6 +1,7 @@
 package com.company;
 
 class Cockroach extends Bug {
+
     private String Colors;
 
     public Cockroach() {
@@ -24,8 +25,14 @@ class Cockroach extends Bug {
 
     }
 
-    public void getInfo() {
+    @Override
+    public String toString() {
+        return "Cockroach{" +
+                "Colors='" + Colors + '\'' +
+                '}';
+    }
+     public String getInfo() {
         super.getInfo();
-        System.out.print(this.Colors.toString());
+        return toString();
     }
 }

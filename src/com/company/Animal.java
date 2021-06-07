@@ -6,22 +6,31 @@ class Animal {
     public Animal() {
     }
 
-    public Animal(String live) {
+    public Animal(String live)
+    {
         this.Live = live;
     }
 
-    public String getLive() {
+    public String getLive()
+    {
         return this.Live;
     }
 
     public void setLive(String live) {
-        if (live == "жив" | live == "не жив") {
+        if (live == "жив" | live == "не жив")
+        {
             this.Live = live;
         }
-
     }
 
-    public void getInfo() {
-        System.out.print(this.Live.toString() + " ");
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "Live='" + Live + '\'' +
+                '}';
+    }
+
+    public String getInfo() {
+        return toString();
     }
 }

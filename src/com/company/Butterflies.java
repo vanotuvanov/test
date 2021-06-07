@@ -1,6 +1,7 @@
 package com.company;
 
 class Butterflies extends Bug {
+
     private int TL;
 
     public Butterflies() {
@@ -22,8 +23,15 @@ class Butterflies extends Bug {
 
     }
 
-    public void getInfo() {
+    @Override
+    public String toString() {
+        return "Butterflies{" +
+                "TL=" + TL +
+                '}';
+    }
+
+     public String getInfo() {
         super.getInfo();
-        System.out.print(" " + Integer.toString(this.TL) + " месяца ");
+        return toString();
     }
 }
