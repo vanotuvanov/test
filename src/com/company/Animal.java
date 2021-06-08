@@ -31,6 +31,8 @@ class Animal {
     }
 
     public String getInfo() {
-        return toString();
+        String s;
+        s=this.Live;
+        return s;
     }
 }

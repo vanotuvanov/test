@@ -44,7 +44,8 @@ class Bug extends Animal {
     }
 
     public String getInfo() {
-        super.getInfo();
-        return toString();
+        String s;
+        s=super.getInfo()+" "+this.Paws+" "+this.Usi;
+        return s;
     }
 }

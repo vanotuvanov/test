@@ -32,7 +32,7 @@ class Cockroach extends Bug {
                 '}';
     }
      public String getInfo() {
-        super.getInfo();
-        return toString();
+        String s=super.getInfo()+" "+this.Colors;
+        return s;
     }
 }

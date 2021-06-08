@@ -15,8 +15,7 @@ public class Main {
 
         for (Animal emp : empSpisok)//вывод списка через цикл
         {
-            emp.getInfo();//вызов для получении информации об элементе
-            System.out.println(emp);//чтобы каждый новый элемент с новой строки
+            System.out.println(emp.getInfo());//чтобы каждый новый элемент с новой строки
         }
     }
 }

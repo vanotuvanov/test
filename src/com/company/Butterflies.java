@@ -31,7 +31,7 @@ class Butterflies extends Bug {
     }
 
      public String getInfo() {
-        super.getInfo();
-        return toString();
+        String s=super.getInfo()+" "+this.TL;
+        return s;
     }
 }
